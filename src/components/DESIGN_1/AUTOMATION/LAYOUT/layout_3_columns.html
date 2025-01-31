@@ -1,0 +1,14 @@
+<table class="w-full">
+  <tr>
+    <if condition="responsive === true">
+      <th class="{{widthLeft}} font-normal {{hAlign}} {{hLeftAlign}} {{vAlign}} sm:block sm:w-full sm:pb-2 dark:text-white"><slot:leftColumn /><yield /></th>
+      <th class="{{widthMiddle}} font-normal {{hAlign}} {{hMiddleAlign}} {{vAlign}} sm:block sm:w-full sm:pb-2 dark:text-white"><slot:middleColumn /><yield /></th>
+      <th class="{{widthRight}} font-normal {{hAlign}} {{hRightAlign}} {{vAlign}} sm:block sm:w-full dark:text-white"><slot:rightColumn /><yield /></th>
+    </if>
+    <else>
+      <th class="{{widthLeft}} font-normal {{hAlign}} {{hLeftAlign}} {{vAlign}} dark:text-white"><slot:leftColumn /><yield /></th>
+      <th class="{{widthMiddle}} font-normal {{hAlign}} {{hMiddleAlign}} {{vAlign}} dark:text-white"><slot:middleColumn /><yield /></th>
+      <th class="{{widthRight}} font-normal {{hAlign}} {{hRightAlign}} {{vAlign}} dark:text-white"><slot:rightColumn /><yield /></th>
+    </else>
+  </tr>
+</table>

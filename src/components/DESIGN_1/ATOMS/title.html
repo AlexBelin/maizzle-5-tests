@@ -1,0 +1,40 @@
+<script props>
+	module.exports = {
+		titleSize: () => {
+			const titlesStyles = [
+				{
+					titleType: "h1",
+					textClass: "text-4_5xl leading-[42px] sm:text-4xl sm:leading-10"
+				},
+				{
+					titleType: "h2",
+					textClass: "text-3xl leading-[32px] sm:text-2xl sm:leading-[26px]"
+				},
+				{
+					titleType: "h3",
+					textClass: "text-2xl leading-[26px] sm:text-xl sm:leading-6"
+				},
+				{
+					titleType: "h4",
+					textClass: "text-xl leading-[22px] sm:text-lg sm:leading-5"
+				},
+				{
+					titleType: "h5",
+					textClass: "text-lg"
+				},
+				{
+					titleType: "h6",
+					textClass: "text-[18px]"
+				}
+			];
+			const textStyle = titlesStyles.find(obj => {
+				return obj.titleType === props.titleType;
+			})
+			return textStyle.textClass;
+		},
+		titleColor: () => {
+			return props.textColor || 'text-DESIGN1-primary';
+		}
+	}
+</script>
+<{{titleType}} class="{{titleColor}} font-bold {{titleSize}} m-0 p-0 dark:text-white" data-testid="{{dataTestId}}" dir="{{textRendering.direction}}"><yield /></{{titleType}}>

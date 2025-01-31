@@ -1,0 +1,17 @@
+<table class="w-full" dir="ltr">
+  <tr>
+    <td class="{{textRendering.align}}">
+      <x-title titleType="h3">AUTOMATION DESIGN_1<br /><slot:titleContent /><yield /></x-title>
+    </td>
+  </tr>
+  <tr>
+    <td class="{{textRendering.align}} {{page.textLvl2 || 'text-DESIGN1-secondary'}} pt-2 pb-4 dark:text-white"><slot:editoContent /><yield /></td>
+  </tr>
+  <if condition="$slots.ctaLabel?.filled">
+    <tr>
+      <td class="{{textRendering.align}}">
+        <x-secondary_cta ctaUrl="{{ctaUrl}}"><slot:ctaLabel /><yield /></x-secondary_cta>
+      </td>
+    </tr>
+  </if>
+</table>
